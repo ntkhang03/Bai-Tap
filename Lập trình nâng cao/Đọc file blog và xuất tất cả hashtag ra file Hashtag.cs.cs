@@ -16,7 +16,6 @@ namespace BaiTap {
       while ((line = baiBao.ReadLine()) != null) {
         string[] splitLine = line.Split(' '); // tách chuỗi bằng ký tự khoảng cách
         foreach (string hashTag in splitLine) // foreach duyệt từng phần tử của mảng, tài liệu tham khảo: https://howkteam.vn/course/khoa-hoc-lap-trinh-c-can-ban/vong-lap-foreach-trong-lap-trinh-c-co-ban-1193
-        
           // dùng foreach + IndexOf tìm hashtag trong hàng
           if (hashTag.IndexOf('#') == 0) writeHashtag.WriteLine(hashTag); // nếu có ký tự # đứng ở vị trí đầu tiên => là hashTag => viết vào file
       }
