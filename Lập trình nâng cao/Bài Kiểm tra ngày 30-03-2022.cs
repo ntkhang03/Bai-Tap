@@ -28,7 +28,7 @@ namespace BaiTap {
         
         // câu a & b
         string[] numbers = line.Split(',');
-        foreach(string num in numbers) {
+        foreach (string num in numbers) {
           int number = int.Parse(num);
           if (number % 2 == 0) tongSoChan += number; // nếu chia hết cho 2 thì cộng vào tổng số chẵn
           if (number % 7 == 0) soChiaHetCho7++; // nếu chia hết cho 7 thì cộng 1 vào biến đếm chia hết cho 7
