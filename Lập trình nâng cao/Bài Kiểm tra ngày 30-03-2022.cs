@@ -23,7 +23,7 @@ namespace BaiTap {
       while ((line = Data.ReadLine()) != null) {
         // Câu c
         countLine++; // cộng 1 mỗi lần lặp 1 dòng
-        if (countLine <= 2) ouputData.WriteLine(line); // nếu lặp dòng <= 2 thì viết thêm nội dung của dòng vào file puput
+        if (countLine <= 2) ouputData.WriteLine(line); // nếu lặp dòng <= 2 thì viết thêm nội dung của dòng vào file output.txt
         if (countLine == 2) ouputData.Close(); // nếu dòng == 2 thì đóng file output;
         
         // câu a & b
