@@ -19,7 +19,7 @@ namespace ConsoleApplication1
             double tieuThu = double.Parse(Console.ReadLine());
             Console.WriteLine($"tong tien dien phai tra la: {tinhTienDien(tieuThu)}");
         }
-        
+
         // 20.
         static string tinhChiSoBMI(float heavy, float height)
         {
@@ -44,9 +44,14 @@ namespace ConsoleApplication1
             double bac1 = 3000;
             double bac2 = 5000;
             double bac3 = 7000;
-            if (tieuThu <= 100) tongTien = tieuThu * bac1;
-            else if (tieuThu <= 150) tongTien = (tieuThu - 100) * bac2 + 100 * bac1;
-            else tongTien = (100 * bac1) + (50 * bac2) + ((tieuThu - 150)*bac3);
+
+            if (tieuThu <= 100)
+                tongTien = tieuThu * bac1;
+            else if (tieuThu <= 150)
+                tongTien = (tieuThu - 100) * bac2 + 100 * bac1;
+            else
+                tongTien = (100 * bac1) + (50 * bac2) + ((tieuThu - 150)*bac3);
+
             return tongTien * 0.1 + tongTien;
         }
     }
