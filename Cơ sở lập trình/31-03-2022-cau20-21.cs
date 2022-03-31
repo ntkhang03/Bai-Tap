@@ -15,9 +15,14 @@ namespace ConsoleApplication1
             //Console.Write("Nhap vao chieu cao (m): ");
             //float height = float.Parse(Console.ReadLine());
             //Console.WriteLine($"Ket qua: nguoi " + tinhChiSoBMI(heavy, height));
-            Console.Write("Nhap vao kw tieu thu: ");
-            double tieuThu = double.Parse(Console.ReadLine());
-            Console.WriteLine($"tong tien dien phai tra la: {tinhTienDien(tieuThu)}");
+
+            //Console.Write("Nhap vao kw tieu thu: ");
+            //double tieuThu = double.Parse(Console.ReadLine());
+            //Console.WriteLine($"tong tien dien phai tra la: {tinhTienDien(tieuThu)}");
+
+            Console.Write("Nhap vao quang duong di: ");
+            double quangDuong = double.Parse(Console.ReadLine());
+            Console.WriteLine($"tong tien dien taxi tra la: {tinhTienTaxi(quangDuong)}");
         }
 
         // 20.
@@ -53,6 +58,24 @@ namespace ConsoleApplication1
                 tongTien = (100 * bac1) + (50 * bac2) + ((tieuThu - 150)*bac3);
 
             return tongTien * 0.1 + tongTien;
+        }
+
+        // 22 tính tiền taxi
+        static double tinhTienTaxi(double quangDuong)
+        {
+            double tongTien = 0;
+            double bac1 = 15000;
+            double bac2 = 12000;
+            double bac3 = 11000;
+
+            if (quangDuong <= 2)
+                tongTien = quangDuong * bac1;
+            else if (tongTien <= 30)
+                tongTien = (quangDuong - 2) * bac2 + 2 * bac1;
+            else
+                tongTien = (100 * bac1) + (28 * bac2) + ((quangDuong - 30) * bac3);
+
+            return tongTien;
         }
     }
 }
