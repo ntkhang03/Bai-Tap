@@ -19,7 +19,8 @@ namespace ConsoleApplication1
             double tieuThu = double.Parse(Console.ReadLine());
             Console.WriteLine($"tong tien dien phai tra la: {tinhTienDien(tieuThu)}");
         }
-
+        
+        // 20.
         static string tinhChiSoBMI(float heavy, float height)
         {
             float BMI = heavy / (height * height);
