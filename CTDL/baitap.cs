@@ -6,10 +6,10 @@ namespace BaiTap
     {
         static void Main(string[] args)
         {
-            DSLK_PhanSo dsPSo = new DSLK_PhanSo();
-            dsPSo.nhapDSLK_PhanSo();
-            dsPSo.inDSLK_PhanSo();
-            dsPSo.tichDSLK_PhanSo();
+            dslkPhanSo dsPSo = new dslkPhanSo();
+            dsPSo.nhapdslkPhanSo();
+            dsPSo.indslkPhanSo();
+            dsPSo.tichdslkPhanSo();
         }
 
 
@@ -29,15 +29,15 @@ namespace BaiTap
 
             public void nhapPhanSo()
             {
-                Console.WriteLine("Nhap tu so: ");
+                Console.WriteLine("Nhap vao tu so: ");
                 tu = int.Parse(Console.ReadLine());
-                Console.WriteLine("Nhap mau so: ");
+                Console.WriteLine("Nhap vao mau so: ");
                 mau = int.Parse(Console.ReadLine());
             }
 
             public void xuatPhanSo()
             {
-                Console.WriteLine("Phan so: {0}/{1}", tu, mau);
+                Console.WriteLine("Pso: {0}/{1}", tu, mau);
             }
 
             public int Tu {
@@ -71,7 +71,7 @@ namespace BaiTap
         }
 
 
-        public class DSLK_PhanSo
+        public class dslkPhanSo
         {
             private Node pHead;
             private Node pTail;
@@ -87,42 +87,11 @@ namespace BaiTap
                 set { pTail = value; }
             }
 
-            public DSLK_PhanSo()
+            public dslkPhanSo()
             {
                 pHead = null;
                 pTail = null;
             }
-
-            //public void insertHead(phanso ps)
-            //{
-            //    // khai báo và khởi tạo  node
-            //    Node p = new Node(ps);
-            //    if (pHead == null)
-            //    {
-            //        pHead = p;
-            //        pTail = p;
-            //    }
-            //    else
-            //    {
-            //        p.pNext = pHead;
-            //        pHead = p;
-            //    }
-            //}
-
-            //public void InsertAfter(phanso ps)
-            //{
-            //    Node p = new Node(ps);
-            //    if (pHead == null)
-            //    {
-            //        pHead = p;
-            //        pTail = p;
-            //    }
-            //    else
-            //    {
-            //        p.pNext = pHead.pNext;
-            //        pHead.pNext = p;
-            //    }
-            //}
 
 
             public void inSertTail(phanso ps)
@@ -142,7 +111,7 @@ namespace BaiTap
             }
 
 
-            public void nhapDSLK_PhanSo()
+            public void nhapdslkPhanSo()
             {
                 string c;
 
@@ -151,27 +120,27 @@ namespace BaiTap
                     phanso ps = new phanso();
                     ps.nhapPhanSo();
                     inSertTail(ps);
-                    Console.Write("con nhap phan so?  (yes/no)?");
+                    Console.Write("nhap tiep? (yes/no)");
                     c = Console.ReadLine();
 
                 } while (c == "yes");
             }
 
 
-            public void inDSLK_PhanSo()
+            public void indslkPhanSo()
             {
-                Node p = pHead; // tạo node p cho p chạy từ đầu đến cuối danh sách
-                Console.WriteLine("\n\nDanh sach phan so: ");
+                Node p = pHead;
+                Console.WriteLine("\n\n\nnDanh sach phan so la: ");
                 while (p != null)
                 {
-                    Console.Write("-> ");
+                    Console.Write("  ");
                     p.data.xuatPhanSo();
                     p = p.pNext;
                 }
             }
 
 
-            public void tichDSLK_PhanSo()
+            public void tichdslkPhanSo()
             {
                 Node p = pHead;
                 int tu = 1;
@@ -183,7 +152,7 @@ namespace BaiTap
                     p = p.pNext;
                 }
                 phanso ps = new phanso(tu, mau);
-                Console.WriteLine("\n\nTich cua DSLK phan so la: " + ps.Tu + "/" + ps.Mau);
+                Console.WriteLine("\n\nTich cua danh sach phan so tren la: " + ps.Tu + "/" + ps.Mau);
             }
         }
     }
